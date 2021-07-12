@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Score Counter</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="reset_btn_txt">Reset</string>
+    <string name="change_names_btn_txt">Change Names</string>
+    <string name="player_1_score">0</string>
+    <string name="player_2_score">0</string>
+    <string name="player_1_name">Player 1</string>
+    <string name="player_2_name">Player 2</string>
+    <string name="enter_your_names_input">Enter your names</string>
+    <string name="player_1_name_input">Enter player 1 name</string>
+    <string name="player_2_name_input">Enter player 2 name</string>
 </resources>

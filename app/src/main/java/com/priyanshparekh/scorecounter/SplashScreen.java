@@ -9,7 +9,7 @@ import android.view.WindowManager;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN_TIMEOUT = 1000;
+    private static final int SPLASH_SCREEN_TIMEOUT = 1500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +19,10 @@ public class SplashScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i =new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent i =new Intent(SplashScreen.this, MainActivity.class);
+            startActivity(i);
+            finish();
         }, SPLASH_SCREEN_TIMEOUT);
 
     }
