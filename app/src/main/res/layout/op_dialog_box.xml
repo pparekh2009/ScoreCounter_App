@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/op_dialog_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_your_names_input"
+        android:textSize="22sp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/op_p1_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/player_1_name_input"
+        android:textSize="20sp"
+        android:maxLength="20"
+        android:autofillHints="Player 1"
+        android:inputType="text" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity"
+    android:background="@color/app_bg">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score\nCounter"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:layout_marginStart="85dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/plyr_1_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 Player"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        android:layout_marginStart="85dp"
+        app:layout_constraintStart_toEndOf="@id/header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/plyr_3_btn"/>
+
+    <Button
+        android:id="@+id/plyr_2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 Players"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        android:layout_marginEnd="55dp"
+        app:layout_constraintTop_toTopOf="@+id/plyr_1_btn"
+        app:layout_constraintBottom_toBottomOf="@id/plyr_1_btn"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/plyr_3_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 Players"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        app:layout_constraintStart_toStartOf="@id/plyr_1_btn"
+        app:layout_constraintEnd_toEndOf="@id/plyr_1_btn"
+        app:layout_constraintTop_toBottomOf="@id/plyr_1_btn"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/plyr_4_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4 Players"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        app:layout_constraintStart_toStartOf="@id/plyr_2_btn"
+        app:layout_constraintEnd_toEndOf="@id/plyr_2_btn"
+        app:layout_constraintTop_toTopOf="@id/plyr_3_btn"
+        app:layout_constraintBottom_toBottomOf="@id/plyr_3_btn"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

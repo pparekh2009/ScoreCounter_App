@@ -6,7 +6,11 @@
     <string name="player_2_score">0</string>
     <string name="player_1_name">Player 1</string>
     <string name="player_2_name">Player 2</string>
+    <string name="player_3_name">Player 3</string>
+    <string name="player_4_name">Player 4</string>
     <string name="enter_your_names_input">Enter your names</string>
     <string name="player_1_name_input">Enter player 1 name</string>
     <string name="player_2_name_input">Enter player 2 name</string>
+    <string name="player_3_name_input">Enter player 3 name</string>
+    <string name="player_4_name_input">Enter player 4 name</string>
 </resources>

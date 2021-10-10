@@ -10,5 +10,5 @@
     <color name="plr1_clr">#79a7d3</color>
     <color name="plr2_clr">#6883bc</color>
     <color name="reset_clr">#8a307f</color>
-    <color name="splash_bg">#f4d84a</color>
+    <color name="app_bg">#FFD800</color>
 </resources>
