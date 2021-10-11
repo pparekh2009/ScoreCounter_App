@@ -170,28 +170,34 @@ public class FourPlayerActivity extends AppCompatActivity {
 
     public void setPlayerNames(String name1, String name2, String name3, String name4) {
 
-        if (name1.equals("")) {
+        if (name1.equals("") && name2.equals("") && name3.equals("") && name4.equals("")){
             fpPlayer1Name.setText("Player 1");
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name2.equals("")) {
-            fpPlayer1Name.setText(name1);
             fpPlayer2Name.setText("Player 2");
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(name4);
+            fpPlayer3Name.setText("Player 3");
+            fpPlayer4Name.setText("Player 4");
         }
-        else if (name3.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(name2);
+        else if (name1.equals("") && name2.equals("") && name3.equals("")) {
+            fpPlayer1Name.setText("Player 1");
+            fpPlayer2Name.setText("Player 2");
             fpPlayer3Name.setText("Player 3");
             fpPlayer4Name.setText(name4);
         }
-        else if (name4.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(name2);
+        else if (name1.equals("") && name2.equals("") && name4.equals("")) {
+            fpPlayer1Name.setText("Player 1");
+            fpPlayer2Name.setText("Player 2");
             fpPlayer3Name.setText(name3);
+            fpPlayer4Name.setText("Player 4");
+        }
+        else if (name1.equals("") && name3.equals("") && name4.equals("")) {
+            fpPlayer1Name.setText("Player 1");
+            fpPlayer2Name.setText(name2);
+            fpPlayer3Name.setText("Player 3");
+            fpPlayer4Name.setText("Player 4");
+        }
+        else if (name2.equals("") && name3.equals("") && name4.equals("")) {
+            fpPlayer1Name.setText(name1);
+            fpPlayer2Name.setText("Player 2");
+            fpPlayer3Name.setText("Player 3");
             fpPlayer4Name.setText("Player 4");
         }
         else if (name1.equals("") && name2.equals("")) {
@@ -230,41 +236,36 @@ public class FourPlayerActivity extends AppCompatActivity {
             fpPlayer3Name.setText(name3);
             fpPlayer4Name.setText("Player 4");
         }
-        else if (name1.equals("") && name2.equals("") && name3.equals("")) {
+        else if (name1.equals("")) {
             fpPlayer1Name.setText("Player 1");
-            fpPlayer2Name.setText("Player 2");
-            fpPlayer3Name.setText("Player 3");
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name1.equals("") && name2.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText("Player 1");
-            fpPlayer2Name.setText("Player 2");
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText("Player 4");
-        }
-        else if (name1.equals("") && name3.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText("Player 1");
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText("Player 3");
-            fpPlayer4Name.setText("Player 4");
-        }
-        else if (name2.equals("") && name3.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText("Player 2");
-            fpPlayer3Name.setText("Player 3");
-            fpPlayer4Name.setText("Player 4");
-        }
-        else if (!name1.equals("") && !name2.equals("") && !name3.equals("") && !name4.equals("")) {
-            fpPlayer1Name.setText(name1);
             fpPlayer2Name.setText(name2);
             fpPlayer3Name.setText(name3);
             fpPlayer4Name.setText(name4);
+        }
+        else if (name2.equals("")) {
+            fpPlayer1Name.setText(name1);
+            fpPlayer2Name.setText("Player 2");
+            fpPlayer3Name.setText(name3);
+            fpPlayer4Name.setText(name4);
+        }
+        else if (name3.equals("")) {
+            fpPlayer1Name.setText(name1);
+            fpPlayer2Name.setText(name2);
+            fpPlayer3Name.setText("Player 3");
+            fpPlayer4Name.setText(name4);
+        }
+        else if (name4.equals("")) {
+            fpPlayer1Name.setText(name1);
+            fpPlayer2Name.setText(name2);
+            fpPlayer3Name.setText(name3);
+            fpPlayer4Name.setText("Player 4");
         }
         else {
-            fpPlayer1Name.setText("Player 1");
-            fpPlayer2Name.setText("Player 2");
-            fpPlayer3Name.setText("Player 3");
-            fpPlayer4Name.setText("Player 4");
+            fpPlayer1Name.setText(name1);
+            fpPlayer2Name.setText(name2);
+            fpPlayer3Name.setText(name3);
+            fpPlayer4Name.setText(name4);
         }
+
     }
 }

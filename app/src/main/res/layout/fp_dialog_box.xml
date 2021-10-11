@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="15dp">
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/thp_dialog_header"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/enter_your_names_input"
-        android:textSize="22sp"
-        android:textAlignment="center" />
+        android:layout_height="match_parent"
+        android:padding="15dp">
 
-    <EditText
-        android:id="@+id/fp_p1_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/player_1_name_input"
-        android:textSize="20sp"
-        android:maxLength="20"
-        android:autofillHints="Player 1"
-        android:inputType="text" />
+        <TextView
+            android:id="@+id/thp_dialog_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_your_names_input"
+            android:textSize="22sp"
+            android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/fp_p2_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/player_2_name_input"
-        android:textSize="20sp"
-        android:maxLength="20"
-        android:autofillHints="Player 2"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/fp_p1_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/player_1_name_input"
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:autofillHints="Player 1"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/fp_p3_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/player_3_name_input"
-        android:textSize="20sp"
-        android:maxLength="20"
-        android:autofillHints="Player 3"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/fp_p2_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/player_2_name_input"
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:autofillHints="Player 2"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/fp_p4_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/player_4_name_input"
-        android:textSize="20sp"
-        android:maxLength="20"
-        android:autofillHints="Player 4"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/fp_p3_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/player_3_name_input"
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:autofillHints="Player 3"
+            android:inputType="text" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/fp_p4_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/player_4_name_input"
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:autofillHints="Player 4"
+            android:inputType="text" />
+
+    </LinearLayout>
+</ScrollView>

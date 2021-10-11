@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class ThreePlayerActivity extends AppCompatActivity {
 
     Button thpChangeNameBtn, thpResetBtn;
@@ -141,19 +143,9 @@ public class ThreePlayerActivity extends AppCompatActivity {
 
     public void setPlayerNames(String name1, String name2, String name3) {
 
-        if (name1.equals("")) {
+        if (name1.equals("") && name2.equals("") && name3.equals("")) {
             thpPlayer1Name.setText("Player 1");
-            thpPlayer2Name.setText(name2);
-            thpPlayer3Name.setText(name3);
-        }
-        else if (name2.equals("")) {
-            thpPlayer1Name.setText(name1);
             thpPlayer2Name.setText("Player 2");
-            thpPlayer3Name.setText(name3);
-        }
-        else if (name3.equals("")) {
-            thpPlayer1Name.setText(name1);
-            thpPlayer2Name.setText(name2);
             thpPlayer3Name.setText("Player 3");
         }
         else if (name1.equals("") && name2.equals("")) {
@@ -171,15 +163,26 @@ public class ThreePlayerActivity extends AppCompatActivity {
             thpPlayer2Name.setText(name2);
             thpPlayer3Name.setText("Player 3");
         }
-        else if (!name1.equals("") && !name2.equals("") && !name3.equals("")) {
+        else if (name1.equals("")) {
+            thpPlayer1Name.setText("Player 1");
+            thpPlayer2Name.setText(name2);
+            thpPlayer3Name.setText(name3);
+        }
+        else if (name2.equals("")) {
+            thpPlayer1Name.setText(name1);
+            thpPlayer2Name.setText("Player 2");
+            thpPlayer3Name.setText(name3);
+        }
+        else if (name3.equals("")) {
+            thpPlayer1Name.setText(name1);
+            thpPlayer2Name.setText(name2);
+            thpPlayer3Name.setText("Player 3");
+        }
+        else {
             thpPlayer1Name.setText(name1);
             thpPlayer2Name.setText(name2);
             thpPlayer3Name.setText(name3);
         }
-        else {
-            thpPlayer1Name.setText("Player 1");
-            thpPlayer2Name.setText("Player 2");
-            thpPlayer3Name.setText("Player 3");
-        }
+
     }
 }

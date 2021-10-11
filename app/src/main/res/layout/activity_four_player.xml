@@ -49,49 +49,69 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/fp_player_1_btn"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="0"
-            android:background="@drawable/button_style_1"
-            android:textSize="56sp"
-            android:paddingTop="100dp"
-            android:layout_margin="10dp"/>
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/fp_player_2_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="0"
-            android:background="@drawable/button_style_1"
-            android:textSize="56sp"
-            android:paddingTop="100dp"
-            android:layout_margin="10dp"/>
+            <Button
+                android:id="@+id/fp_player_1_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:paddingEnd="50dp"
+                android:background="@drawable/button_style_1"
+                android:textSize="56sp"
+                android:layout_margin="10dp"/>
 
-        <Button
-            android:id="@+id/fp_player_3_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="0"
-            android:textSize="56sp"
-            android:background="@drawable/button_style_1"
-            android:paddingTop="100dp"
-            android:layout_margin="10dp" />
+            <Button
+                android:id="@+id/fp_player_2_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:paddingEnd="50dp"
+                android:background="@drawable/button_style_1"
+                android:textSize="56sp"
+                android:layout_margin="10dp"/>
 
-        <Button
-            android:id="@+id/fp_player_4_btn"
-            android:layout_width="0dp"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="0"
-            android:background="@drawable/button_style_1"
-            android:textSize="56sp"
-            android:paddingTop="100dp"
-            android:layout_margin="10dp" />
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/fp_player_3_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:paddingEnd="50dp"
+                android:layout_weight="1"
+                android:textSize="56sp"
+                android:gravity="right|center_vertical"
+                android:background="@drawable/button_style_1"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:id="@+id/fp_player_4_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:paddingEnd="50dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:background="@drawable/button_style_1"
+                android:textSize="56sp"
+                android:layout_margin="10dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -101,12 +121,12 @@
         android:layout_height="wrap_content"
         android:text="Player 1"
         android:textSize="36sp"
+        android:paddingStart="50dp"
         android:textColor="@color/white"
-        android:textAlignment="center"
-        android:layout_marginTop="140dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_layout"
+        app:layout_constraintBottom_toTopOf="@+id/fp_player_3_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.25"/>
+        app:layout_constraintWidth_percent="0.5"/>
 
     <TextView
         android:id="@+id/fp_player_2_name"
@@ -115,11 +135,11 @@
         android:text="Player 2"
         android:textSize="36sp"
         android:textColor="@color/white"
-        android:textAlignment="center"
-        android:layout_marginTop="140dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/settings_layout"
         app:layout_constraintStart_toEndOf="@+id/fp_player_1_name"
-        app:layout_constraintWidth_percent="0.25"/>
+        app:layout_constraintBottom_toTopOf="@+id/fp_player_4_name"
+        app:layout_constraintWidth_percent="0.5"/>
 
     <TextView
         android:id="@+id/fp_player_3_name"
@@ -128,11 +148,12 @@
         android:text="Player 3"
         android:textSize="36sp"
         android:textColor="@color/white"
-        android:textAlignment="center"
-        android:layout_marginTop="140dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fp_player_2_name"
-        app:layout_constraintWidth_percent="0.25"/>
+        android:paddingStart="50dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fp_player_1_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5"/>
 
     <TextView
         android:id="@+id/fp_player_4_name"
@@ -140,11 +161,12 @@
         android:layout_height="wrap_content"
         android:text="Player 4"
         android:textSize="36sp"
+        android:layout_marginTop="55dp"
         android:textColor="@color/white"
-        android:textAlignment="center"
-        android:layout_marginTop="140dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/fp_player_2_name"
         app:layout_constraintStart_toEndOf="@+id/fp_player_3_name"
-        app:layout_constraintWidth_percent="0.25"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.5"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
