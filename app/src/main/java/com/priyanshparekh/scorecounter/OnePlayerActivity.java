@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class OnePlayerActivity extends AppCompatActivity {
 
     Button opChangeNameBtn, opResetBtn;
@@ -26,42 +27,27 @@ public class OnePlayerActivity extends AppCompatActivity {
         opPlayer1Btn = findViewById(R.id.op_player_1_btn);
         opPlayer1Name = findViewById(R.id.op_player_1_name);
 
-        opPlayer1Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                op_p1_score++;
+        opPlayer1Btn.setOnClickListener(v -> {
+            op_p1_score++;
+            opPlayer1Btn.setText(String.valueOf(op_p1_score));
+        });
+
+        opPlayer1Btn.setOnLongClickListener(v -> {
+            if (op_p1_score > 0) {
+                op_p1_score--;
                 opPlayer1Btn.setText(String.valueOf(op_p1_score));
-            }
-        });
-
-        opPlayer1Btn.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (op_p1_score > 0) {
-                    op_p1_score--;
-                    opPlayer1Btn.setText(String.valueOf(op_p1_score));
-                }
-                else {
-                    opPlayer1Btn.setText("0");
-                }
-                return true;
-            }
-        });
-
-        opResetBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                op_p1_score = 0;
+            } else {
                 opPlayer1Btn.setText("0");
             }
+            return true;
         });
 
-        opChangeNameBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog();
-            }
+        opResetBtn.setOnClickListener(v -> {
+            op_p1_score = 0;
+            opPlayer1Btn.setText("0");
         });
+
+        opChangeNameBtn.setOnClickListener(v -> showAlertDialog());
     }
 
     public void showAlertDialog() {
@@ -76,7 +62,8 @@ public class OnePlayerActivity extends AppCompatActivity {
             setPlayerNames(opP1Input.getText().toString());
         });
 
-        builder.setNegativeButton("Cancel", (dialog, which) -> {});
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
+        });
 
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -84,9 +71,8 @@ public class OnePlayerActivity extends AppCompatActivity {
 
     public void setPlayerNames(String name1) {
         if (name1.equals("")) {
-            opPlayer1Name.setText("Player 1");
-        }
-        else {
+            opPlayer1Name.setText(R.string.player_1_name);
+        } else {
             opPlayer1Name.setText(name1);
         }
     }

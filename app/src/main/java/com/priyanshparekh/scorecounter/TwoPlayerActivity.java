@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Objects;
-
 public class TwoPlayerActivity extends AppCompatActivity {
 
     Button tpChangeNameBtn, tpResetBtn;
@@ -75,12 +73,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
             tpPlayer2Btn.setText("0");
         });
 
-        tpChangeNameBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog();
-            }
-        });
+        tpChangeNameBtn.setOnClickListener(v -> showAlertDialog());
     }
 
     public void showAlertDialog() {
@@ -104,21 +97,22 @@ public class TwoPlayerActivity extends AppCompatActivity {
     }
 
     private void setPlayerNames(String name1, String name2) {
-        if (name1.equals("")) {
-            tpPlayer1Name.setText("Player 1");
+
+        if (name1.equals("") && name2.equals("")) {
+            tpPlayer1Name.setText(R.string.player_1_name);
+            tpPlayer2Name.setText(R.string.player_2_name);
+        }
+        else if (name1.equals("")) {
+            tpPlayer1Name.setText(R.string.player_1_name);
             tpPlayer2Name.setText(name2);
         }
         else if (name2.equals("")) {
             tpPlayer1Name.setText(name1);
-            tpPlayer2Name.setText("Player 2");
-        }
-        else if (!name1.equals("") && !name2.equals("")) {
-            tpPlayer1Name.setText(name1);
-            tpPlayer2Name.setText(name2);
+            tpPlayer2Name.setText(R.string.player_2_name);
         }
         else {
-            tpPlayer1Name.setText("Player 1");
-            tpPlayer2Name.setText("Player 2");
+            tpPlayer1Name.setText(name1);
+            tpPlayer2Name.setText(name2);
         }
     }
 }
