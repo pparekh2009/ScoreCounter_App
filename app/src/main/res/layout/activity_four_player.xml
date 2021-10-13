@@ -36,7 +36,7 @@
             android:textSize="24sp"
             android:background="@drawable/button_style_2"
             android:textColor="@color/white"
-            android:text="@string/change_name_btn_txt"
+            android:text="@string/reset_btn_txt"
             android:layout_margin="10dp"
             tools:ignore="ButtonStyle" />
 
