@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
     TextView tpPlayer1Name, tpPlayer2Name;
     int tp_p1_score = 0;
     int tp_p2_score = 0;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
         tpPlayer1Btn.setOnClickListener(v -> {
             tp_p1_score++;
             tpPlayer1Btn.setText(String.valueOf(tp_p1_score));
+            v.startAnimation(buttonClick);
         });
 
         // Decrement score for player 1
@@ -45,6 +48,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
             else {
                 tpPlayer1Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -52,6 +56,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
         tpPlayer2Btn.setOnClickListener(v -> {
             tp_p2_score++;
             tpPlayer2Btn.setText(String.valueOf(tp_p2_score));
+            v.startAnimation(buttonClick);
         });
 
         // Decrement score for player 2
@@ -63,6 +68,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
             else {
                 tpPlayer2Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -71,9 +77,13 @@ public class TwoPlayerActivity extends AppCompatActivity {
             tp_p2_score = 0;
             tpPlayer1Btn.setText("0");
             tpPlayer2Btn.setText("0");
+            v.startAnimation(buttonClick);
         });
 
-        tpChangeNameBtn.setOnClickListener(v -> showAlertDialog());
+        tpChangeNameBtn.setOnClickListener(v -> {
+            v.startAnimation(buttonClick);
+            showAlertDialog();
+        });
     }
 
     public void showAlertDialog() {

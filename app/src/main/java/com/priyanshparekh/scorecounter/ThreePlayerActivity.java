@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class ThreePlayerActivity extends AppCompatActivity {
     int thp_p1_score = 0;
     int thp_p2_score = 0;
     int thp_p3_score = 0;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +38,19 @@ public class ThreePlayerActivity extends AppCompatActivity {
         thpPlayer1Btn.setOnClickListener(v -> {
             thp_p1_score++;
             thpPlayer1Btn.setText(String.valueOf(thp_p1_score));
+            v.startAnimation(buttonClick);
         });
 
         thpPlayer2Btn.setOnClickListener(v -> {
             thp_p2_score++;
             thpPlayer2Btn.setText(String.valueOf(thp_p2_score));
+            v.startAnimation(buttonClick);
         });
 
         thpPlayer3Btn.setOnClickListener(v -> {
             thp_p3_score++;
             thpPlayer3Btn.setText(String.valueOf(thp_p3_score));
+            v.startAnimation(buttonClick);
         });
 
         thpPlayer1Btn.setOnLongClickListener(v -> {
@@ -56,6 +61,7 @@ public class ThreePlayerActivity extends AppCompatActivity {
             else {
                 thpPlayer1Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -67,6 +73,7 @@ public class ThreePlayerActivity extends AppCompatActivity {
             else {
                 thpPlayer2Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -78,6 +85,7 @@ public class ThreePlayerActivity extends AppCompatActivity {
             else {
                 thpPlayer3Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -88,9 +96,13 @@ public class ThreePlayerActivity extends AppCompatActivity {
             thpPlayer1Btn.setText("0");
             thpPlayer2Btn.setText("0");
             thpPlayer3Btn.setText("0");
+            v.startAnimation(buttonClick);
         });
 
-        thpChangeNameBtn.setOnClickListener(v -> showAlertDialog());
+        thpChangeNameBtn.setOnClickListener(v -> {
+            v.startAnimation(buttonClick);
+            showAlertDialog();
+        });
     }
 
     public void showAlertDialog() {

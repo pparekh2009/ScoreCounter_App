@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class OnePlayerActivity extends AppCompatActivity {
     Button opPlayer1Btn;
     TextView opPlayer1Name;
     int op_p1_score = 0;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class OnePlayerActivity extends AppCompatActivity {
         opPlayer1Btn.setOnClickListener(v -> {
             op_p1_score++;
             opPlayer1Btn.setText(String.valueOf(op_p1_score));
+            v.startAnimation(buttonClick);
         });
 
         opPlayer1Btn.setOnLongClickListener(v -> {
@@ -39,15 +42,20 @@ public class OnePlayerActivity extends AppCompatActivity {
             } else {
                 opPlayer1Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
         opResetBtn.setOnClickListener(v -> {
             op_p1_score = 0;
             opPlayer1Btn.setText("0");
+            v.startAnimation(buttonClick);
         });
 
-        opChangeNameBtn.setOnClickListener(v -> showAlertDialog());
+        opChangeNameBtn.setOnClickListener(v -> {
+            showAlertDialog();
+            v.startAnimation(buttonClick);
+        });
     }
 
     public void showAlertDialog() {

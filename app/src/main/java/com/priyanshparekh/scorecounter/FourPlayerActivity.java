@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class FourPlayerActivity extends AppCompatActivity {
     int fp_p2_score = 0;
     int fp_p3_score = 0;
     int fp_p4_score = 0;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,21 +40,25 @@ public class FourPlayerActivity extends AppCompatActivity {
         fpPlayer1Btn.setOnClickListener(v -> {
             fp_p1_score++;
             fpPlayer1Btn.setText(String.valueOf(fp_p1_score));
+            v.startAnimation(buttonClick);
         });
 
         fpPlayer2Btn.setOnClickListener(v -> {
             fp_p2_score++;
             fpPlayer2Btn.setText(String.valueOf(fp_p2_score));
+            v.startAnimation(buttonClick);
         });
 
         fpPlayer3Btn.setOnClickListener(v -> {
             fp_p3_score++;
             fpPlayer3Btn.setText(String.valueOf(fp_p3_score));
+            v.startAnimation(buttonClick);
         });
 
         fpPlayer4Btn.setOnClickListener(v -> {
             fp_p4_score++;
             fpPlayer4Btn.setText(String.valueOf(fp_p4_score));
+            v.startAnimation(buttonClick);
         });
 
         fpPlayer1Btn.setOnLongClickListener(v -> {
@@ -63,6 +69,7 @@ public class FourPlayerActivity extends AppCompatActivity {
             else {
                 fpPlayer1Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -74,6 +81,7 @@ public class FourPlayerActivity extends AppCompatActivity {
             else {
                 fpPlayer2Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -85,6 +93,7 @@ public class FourPlayerActivity extends AppCompatActivity {
             else {
                 fpPlayer3Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -96,6 +105,7 @@ public class FourPlayerActivity extends AppCompatActivity {
             else {
                 fpPlayer4Btn.setText("0");
             }
+            v.startAnimation(buttonClick);
             return true;
         });
 
@@ -108,9 +118,13 @@ public class FourPlayerActivity extends AppCompatActivity {
             fpPlayer2Btn.setText("0");
             fpPlayer3Btn.setText("0");
             fpPlayer4Btn.setText("0");
+            v.startAnimation(buttonClick);
         });
 
-        fpChangeNameBtn.setOnClickListener(v -> showAlertDialog());
+        fpChangeNameBtn.setOnClickListener(v -> {
+            showAlertDialog();
+            v.startAnimation(buttonClick);
+        });
     }
 
     public void showAlertDialog() {
