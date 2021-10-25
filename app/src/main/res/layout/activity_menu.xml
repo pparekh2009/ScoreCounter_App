@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="@id/plyr_1_btn"
         app:layout_constraintEnd_toEndOf="@id/plyr_1_btn"
         app:layout_constraintTop_toBottomOf="@id/plyr_1_btn"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/toss_btn"/>
 
     <Button
         android:id="@+id/plyr_4_btn"
@@ -75,6 +75,34 @@
         app:layout_constraintStart_toStartOf="@id/plyr_2_btn"
         app:layout_constraintEnd_toEndOf="@id/plyr_2_btn"
         app:layout_constraintTop_toTopOf="@id/plyr_3_btn"
-        app:layout_constraintBottom_toBottomOf="@id/plyr_3_btn"/>
+        app:layout_constraintBottom_toBottomOf="@id/plyr_3_btn" />
+
+    <Button
+        android:id="@+id/toss_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toss"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        app:layout_constraintStart_toStartOf="@+id/plyr_3_btn"
+        app:layout_constraintEnd_toEndOf="@+id/plyr_3_btn"
+        app:layout_constraintTop_toBottomOf="@id/plyr_3_btn"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/dice_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dice"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        app:layout_constraintStart_toStartOf="@id/plyr_4_btn"
+        app:layout_constraintEnd_toEndOf="@id/plyr_4_btn"
+        app:layout_constraintTop_toTopOf="@id/toss_btn"
+        app:layout_constraintBottom_toBottomOf="@id/toss_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

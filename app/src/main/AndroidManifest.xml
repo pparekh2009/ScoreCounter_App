@@ -9,37 +9,39 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-<!--        android:theme="@style/Theme.ScoreCounter"-->
+        <activity
+            android:name=".TossActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".DiceActivity"
+            android:screenOrientation="landscape" />
+ <!-- android:theme="@style/Theme.ScoreCounter" -->
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="landscape">
-            <intent-filter>
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
+                <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
         <activity
             android:name=".MenuActivity"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".OnePlayerActivity"
-            android:screenOrientation="landscape"/>
-
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TwoPlayerActivity"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".ThreePlayerActivity"
-            android:screenOrientation="landscape"/>
-
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FourPlayerActivity"
-            android:screenOrientation="landscape"/>
-
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

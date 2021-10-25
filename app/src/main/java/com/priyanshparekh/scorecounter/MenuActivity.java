@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 
@@ -11,6 +12,7 @@ import android.widget.Button;
 public class MenuActivity extends AppCompatActivity {
 
     Button plyr1Btn, plyr2Btn, plyr3Btn, plyr4Btn;
+    Button tossBtn, diceBtn;
     private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
@@ -22,6 +24,8 @@ public class MenuActivity extends AppCompatActivity {
         plyr2Btn = findViewById(R.id.plyr_2_btn);
         plyr3Btn = findViewById(R.id.plyr_3_btn);
         plyr4Btn = findViewById(R.id.plyr_4_btn);
+        tossBtn = findViewById(R.id.toss_btn);
+        diceBtn = findViewById(R.id.dice_btn);
 
         plyr1Btn.setOnClickListener(v -> {
             v.startAnimation(buttonClick);
@@ -45,6 +49,24 @@ public class MenuActivity extends AppCompatActivity {
             v.startAnimation(buttonClick);
             Intent intent = new Intent(MenuActivity.this, FourPlayerActivity.class);
             startActivity(intent);
+        });
+
+        tossBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(buttonClick);
+                Intent intent = new Intent(MenuActivity.this, TossActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        diceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(buttonClick);
+                Intent intent = new Intent(MenuActivity.this, DiceActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }
