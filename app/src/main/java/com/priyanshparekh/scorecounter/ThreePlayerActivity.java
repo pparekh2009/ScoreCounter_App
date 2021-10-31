@@ -8,7 +8,14 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.unity3d.ads.IUnityAdsListener;
+import com.unity3d.ads.UnityAds;
+import com.unity3d.services.banners.BannerErrorInfo;
+import com.unity3d.services.banners.BannerView;
+import com.unity3d.services.banners.UnityBannerSize;
 
 
 public class ThreePlayerActivity extends AppCompatActivity {
@@ -20,6 +27,16 @@ public class ThreePlayerActivity extends AppCompatActivity {
     int thp_p2_score = 0;
     int thp_p3_score = 0;
     private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
+
+    String unityGameId = "4402543";
+    Boolean testMode = true;
+    Boolean enableLoad = true;
+    String adUnitId = "Banner_Android";
+
+    UnityBannerListener bannerListener = new UnityBannerListener();
+
+    BannerView bannerView;
+    RelativeLayout bannerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +51,15 @@ public class ThreePlayerActivity extends AppCompatActivity {
         thpPlayer1Name = findViewById(R.id.thp_player_1_name);
         thpPlayer2Name = findViewById(R.id.thp_player_2_name);
         thpPlayer3Name = findViewById(R.id.thp_player_3_name);
+
+        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
+
+        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
+        bannerView.setListener(bannerListener);
+        bannerView.load();
+
+        bannerLayout = findViewById(R.id.thp_banner_layout);
+        bannerLayout.addView(bannerView);
 
         thpPlayer1Btn.setOnClickListener(v -> {
             thp_p1_score++;
@@ -168,6 +194,48 @@ public class ThreePlayerActivity extends AppCompatActivity {
             thpPlayer2Name.setText(name2);
             thpPlayer3Name.setText(name3);
         }
+    }
 
+    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
+
+        @Override
+        public void onUnityAdsReady(String s) {
+
+        }
+
+        @Override
+        public void onUnityAdsStart(String s) {
+
+        }
+
+        @Override
+        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
+
+        }
+
+        @Override
+        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
+
+        }
+
+        @Override
+        public void onBannerLoaded(BannerView bannerView) {
+
+        }
+
+        @Override
+        public void onBannerClick(BannerView bannerView) {
+
+        }
+
+        @Override
+        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
+
+        }
+
+        @Override
+        public void onBannerLeftApplication(BannerView bannerView) {
+
+        }
     }
 }

@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/settings_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/thp_banner_layout">
 
         <Button
             android:id="@+id/thp_player_1_btn"
@@ -122,5 +122,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/thp_player_2_name"
         app:layout_constraintWidth_percent="0.33"/>
+
+    <RelativeLayout
+        android:id="@+id/thp_banner_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

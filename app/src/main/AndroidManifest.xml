@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
+            android:name=".MenuActivity2"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".TossActivity"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".DiceActivity"
-            android:screenOrientation="landscape" />
- <!-- android:theme="@style/Theme.ScoreCounter" -->
+            android:screenOrientation="landscape" /> <!-- android:theme="@style/Theme.ScoreCounter" -->
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="landscape">
-             <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-
                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            </intent-filter>
         </activity>
         <activity
             android:name=".MenuActivity"

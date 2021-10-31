@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity2"
+    android:background="@color/app_bg">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score\nCounter"
+        android:textSize="64sp"
+        android:textAlignment="center"
+        android:textColor="#75197C"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="25sp"
+        android:paddingStart="10dp"
+        android:popupBackground="@drawable/spinner_dropdown_item"
+        android:background="@drawable/spinner_dropdown"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintStart_toEndOf="@+id/textview"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toss"
+        android:textSize="24sp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_style_2"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/textview"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dice"
+        android:background="@drawable/button_style_2"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toTopOf="@+id/button1"
+        app:layout_constraintBottom_toBottomOf="@+id/button1"
+        app:layout_constraintEnd_toEndOf="parent" />
+    
+    <RelativeLayout
+        android:id="@+id/banner_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         new Handler().postDelayed(() -> {
-            Intent i =new Intent(SplashScreen.this, MenuActivity.class);
+            Intent i =new Intent(SplashScreen.this, MenuActivity2.class);
             startActivity(i);
             finish();
         }, SPLASH_SCREEN_TIMEOUT);
