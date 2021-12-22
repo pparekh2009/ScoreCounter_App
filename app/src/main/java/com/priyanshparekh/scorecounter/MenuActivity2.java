@@ -15,27 +15,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.unity3d.ads.IUnityAdsListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.services.banners.BannerErrorInfo;
-import com.unity3d.services.banners.BannerView;
-import com.unity3d.services.banners.IUnityBannerListener;
-import com.unity3d.services.banners.UnityBannerSize;
+//import com.unity3d.ads.IUnityAdsListener;
+//import com.unity3d.ads.UnityAds;
+//import com.unity3d.services.banners.BannerErrorInfo;
+//import com.unity3d.services.banners.BannerView;
+//import com.unity3d.services.banners.IUnityBannerListener;
+//import com.unity3d.services.banners.UnityBannerSize;
 
 public class MenuActivity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner spinner;
     String[] players = {"Select Player", "1 Player", "2 Players", "3 Players", "4 Players"};
 
-    String unityGameId = "4402543";
-    Boolean testMode = true;
-    Boolean enableLoad = true;
-    String adUnitId = "Banner_Android";
-
-    UnityBannerListener bannerListener = new UnityBannerListener();
-
-    BannerView bannerView;
-    RelativeLayout bannerLayout;
+//    String unityGameId = "4402543";
+//    Boolean testMode = true;
+//    Boolean enableLoad = true;
+//    String adUnitId = "Banner_Android";
+//
+//    UnityBannerListener bannerListener = new UnityBannerListener();
+//
+//    BannerView bannerView;
+//    RelativeLayout bannerLayout;
 
     Button button1, button2;
 
@@ -50,14 +50,14 @@ public class MenuActivity2 extends AppCompatActivity implements AdapterView.OnIt
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
 
-        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
-
-        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
-        bannerView.setListener(bannerListener);
-        bannerView.load();
-
-        bannerLayout = findViewById(R.id.banner_layout);
-        bannerLayout.addView(bannerView);
+//        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
+//
+//        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
+//        bannerView.setListener(bannerListener);
+//        bannerView.load();
+//
+//        bannerLayout = findViewById(R.id.banner_layout);
+//        bannerLayout.addView(bannerView);
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, players);
         spinner.setAdapter(arrayAdapter);
@@ -125,46 +125,46 @@ public class MenuActivity2 extends AppCompatActivity implements AdapterView.OnIt
         startActivity(intent);
     }
 
-    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
-
-        @Override
-        public void onUnityAdsReady(String s) {
-
-        }
-
-        @Override
-        public void onUnityAdsStart(String s) {
-
-        }
-
-        @Override
-        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-
-        }
-
-        @Override
-        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-        }
-
-        @Override
-        public void onBannerLoaded(BannerView bannerView) {
-
-        }
-
-        @Override
-        public void onBannerClick(BannerView bannerView) {
-
-        }
-
-        @Override
-        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
-
-        }
-
-        @Override
-        public void onBannerLeftApplication(BannerView bannerView) {
-
-        }
-    }
+//    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
+//
+//        @Override
+//        public void onUnityAdsReady(String s) {
+//
+//        }
+//
+//        @Override
+//        public void onUnityAdsStart(String s) {
+//
+//        }
+//
+//        @Override
+//        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
+//
+//        }
+//
+//        @Override
+//        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerLoaded(BannerView bannerView) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerClick(BannerView bannerView) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerLeftApplication(BannerView bannerView) {
+//
+//        }
+//    }
 }

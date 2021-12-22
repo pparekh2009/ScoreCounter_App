@@ -11,11 +11,11 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.unity3d.ads.IUnityAdsListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.services.banners.BannerErrorInfo;
-import com.unity3d.services.banners.BannerView;
-import com.unity3d.services.banners.UnityBannerSize;
+//import com.unity3d.ads.IUnityAdsListener;
+//import com.unity3d.ads.UnityAds;
+//import com.unity3d.services.banners.BannerErrorInfo;
+//import com.unity3d.services.banners.BannerView;
+//import com.unity3d.services.banners.UnityBannerSize;
 
 public class FourPlayerActivity extends AppCompatActivity {
 
@@ -28,15 +28,15 @@ public class FourPlayerActivity extends AppCompatActivity {
     int fp_p4_score = 0;
     private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
-    String unityGameId = "4402543";
-    Boolean testMode = true;
-    Boolean enableLoad = true;
-    String adUnitId = "Banner_Android";
-
-    UnityBannerListener bannerListener = new UnityBannerListener();
-
-    BannerView bannerView;
-    RelativeLayout bannerLayout;
+//    String unityGameId = "4402543";
+//    Boolean testMode = true;
+//    Boolean enableLoad = true;
+//    String adUnitId = "Banner_Android";
+//
+//    UnityBannerListener bannerListener = new UnityBannerListener();
+//
+//    BannerView bannerView;
+//    RelativeLayout bannerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +54,14 @@ public class FourPlayerActivity extends AppCompatActivity {
         fpPlayer3Name = findViewById(R.id.fp_player_3_name);
         fpPlayer4Name = findViewById(R.id.fp_player_4_name);
 
-        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
-
-        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
-        bannerView.setListener(bannerListener);
-        bannerView.load();
-
-        bannerLayout = findViewById(R.id.fp_banner_layout);
-        bannerLayout.addView(bannerView);
+//        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
+//
+//        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
+//        bannerView.setListener(bannerListener);
+//        bannerView.load();
+//
+//        bannerLayout = findViewById(R.id.fp_banner_layout);
+//        bannerLayout.addView(bannerView);
 
         fpPlayer1Btn.setOnClickListener(v -> {
             fp_p1_score++;
@@ -276,46 +276,46 @@ public class FourPlayerActivity extends AppCompatActivity {
         }
     }
 
-    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
-
-        @Override
-        public void onUnityAdsReady(String s) {
-
-        }
-
-        @Override
-        public void onUnityAdsStart(String s) {
-
-        }
-
-        @Override
-        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-
-        }
-
-        @Override
-        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-        }
-
-        @Override
-        public void onBannerLoaded(BannerView bannerView) {
-
-        }
-
-        @Override
-        public void onBannerClick(BannerView bannerView) {
-
-        }
-
-        @Override
-        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
-
-        }
-
-        @Override
-        public void onBannerLeftApplication(BannerView bannerView) {
-
-        }
-    }
+//    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
+//
+//        @Override
+//        public void onUnityAdsReady(String s) {
+//
+//        }
+//
+//        @Override
+//        public void onUnityAdsStart(String s) {
+//
+//        }
+//
+//        @Override
+//        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
+//
+//        }
+//
+//        @Override
+//        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerLoaded(BannerView bannerView) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerClick(BannerView bannerView) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
+//
+//        }
+//
+//        @Override
+//        public void onBannerLeftApplication(BannerView bannerView) {
+//
+//        }
+//    }
 }
