@@ -8,14 +8,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-//import com.unity3d.ads.IUnityAdsListener;
-//import com.unity3d.ads.UnityAds;
-//import com.unity3d.services.banners.BannerErrorInfo;
-//import com.unity3d.services.banners.BannerView;
-//import com.unity3d.services.banners.UnityBannerSize;
 
 public class FourPlayerActivity extends AppCompatActivity {
 
@@ -26,17 +19,7 @@ public class FourPlayerActivity extends AppCompatActivity {
     int fp_p2_score = 0;
     int fp_p3_score = 0;
     int fp_p4_score = 0;
-    private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
-
-//    String unityGameId = "4402543";
-//    Boolean testMode = true;
-//    Boolean enableLoad = true;
-//    String adUnitId = "Banner_Android";
-//
-//    UnityBannerListener bannerListener = new UnityBannerListener();
-//
-//    BannerView bannerView;
-//    RelativeLayout bannerLayout;
+    private final AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +36,6 @@ public class FourPlayerActivity extends AppCompatActivity {
         fpPlayer2Name = findViewById(R.id.fp_player_2_name);
         fpPlayer3Name = findViewById(R.id.fp_player_3_name);
         fpPlayer4Name = findViewById(R.id.fp_player_4_name);
-
-//        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
-//
-//        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
-//        bannerView.setListener(bannerListener);
-//        bannerView.load();
-//
-//        bannerLayout = findViewById(R.id.fp_banner_layout);
-//        bannerLayout.addView(bannerView);
 
         fpPlayer1Btn.setOnClickListener(v -> {
             fp_p1_score++;
@@ -178,144 +152,28 @@ public class FourPlayerActivity extends AppCompatActivity {
 
     public void setPlayerNames(String name1, String name2, String name3, String name4) {
 
-        if (name1.equals("") && name2.equals("") && name3.equals("") && name4.equals("")){
+        if (name1.isEmpty()) {
             fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name1.equals("") && name2.equals("") && name3.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name1.equals("") && name2.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name1.equals("") && name3.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name2.equals("") && name3.equals("") && name4.equals("")) {
+        } else {
             fpPlayer1Name.setText(name1);
+        }
+
+        if (name2.isEmpty()) {
             fpPlayer2Name.setText(R.string.player_2_name);
+        } else {
+            fpPlayer2Name.setText(name2);
+        }
+
+        if (name3.isEmpty()) {
             fpPlayer3Name.setText(R.string.player_3_name);
+        } else {
+            fpPlayer3Name.setText(name3);
+        }
+
+        if (name4.isEmpty()) {
             fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name1.equals("") && name2.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name2.equals("") && name3.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name3.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name1.equals("") && name3.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name1.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name2.equals("") && name4.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else if (name1.equals("")) {
-            fpPlayer1Name.setText(R.string.player_1_name);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name2.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(R.string.player_2_name);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name3.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(R.string.player_3_name);
-            fpPlayer4Name.setText(name4);
-        }
-        else if (name4.equals("")) {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(name3);
-            fpPlayer4Name.setText(R.string.player_4_name);
-        }
-        else {
-            fpPlayer1Name.setText(name1);
-            fpPlayer2Name.setText(name2);
-            fpPlayer3Name.setText(name3);
+        } else {
             fpPlayer4Name.setText(name4);
         }
     }
-
-//    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
-//
-//        @Override
-//        public void onUnityAdsReady(String s) {
-//
-//        }
-//
-//        @Override
-//        public void onUnityAdsStart(String s) {
-//
-//        }
-//
-//        @Override
-//        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-//
-//        }
-//
-//        @Override
-//        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerLoaded(BannerView bannerView) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerClick(BannerView bannerView) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerLeftApplication(BannerView bannerView) {
-//
-//        }
-//    }
 }

@@ -8,14 +8,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-//import com.unity3d.ads.IUnityAdsListener;
-//import com.unity3d.ads.UnityAds;
-//import com.unity3d.services.banners.BannerErrorInfo;
-//import com.unity3d.services.banners.BannerView;
-//import com.unity3d.services.banners.UnityBannerSize;
 
 public class TwoPlayerActivity extends AppCompatActivity {
 
@@ -24,17 +17,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
     TextView tpPlayer1Name, tpPlayer2Name;
     int tp_p1_score = 0;
     int tp_p2_score = 0;
-    private AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
-
-//    String unityGameId = "4402543";
-//    Boolean testMode = true;
-//    Boolean enableLoad = true;
-//    String adUnitId = "Banner_Android";
-//
-//    UnityBannerListener bannerListener = new UnityBannerListener();
-//
-//    BannerView bannerView;
-//    RelativeLayout bannerLayout;
+    private final AlphaAnimation buttonClick = new AlphaAnimation(1f, 0.5f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +30,6 @@ public class TwoPlayerActivity extends AppCompatActivity {
         tpPlayer2Btn = findViewById(R.id.tp_player_2_btn);
         tpPlayer1Name = findViewById(R.id.tp_player_1_name);
         tpPlayer2Name = findViewById(R.id.tp_player_2_name);
-
-//        UnityAds.initialize(this, unityGameId, null, testMode, enableLoad);
-//
-//        bannerView = new BannerView(this, adUnitId, new UnityBannerSize(320, 50));
-//        bannerView.setListener(bannerListener);
-//        bannerView.load();
-//
-//        bannerLayout = findViewById(R.id.twp_banner_layout);
-//        bannerLayout.addView(bannerView);
 
         // Increment score for player 1
         tpPlayer1Btn.setOnClickListener(v -> {
@@ -133,64 +107,16 @@ public class TwoPlayerActivity extends AppCompatActivity {
 
     private void setPlayerNames(String name1, String name2) {
 
-        if (name1.equals("") && name2.equals("")) {
+        if (name1.trim().isEmpty()) {
             tpPlayer1Name.setText(R.string.player_1_name);
-            tpPlayer2Name.setText(R.string.player_2_name);
-        }
-        else if (name1.equals("")) {
-            tpPlayer1Name.setText(R.string.player_1_name);
-            tpPlayer2Name.setText(name2);
-        }
-        else if (name2.equals("")) {
+        } else {
             tpPlayer1Name.setText(name1);
-            tpPlayer2Name.setText(R.string.player_2_name);
         }
-        else {
-            tpPlayer1Name.setText(name1);
+
+        if (name2.trim().isEmpty()) {
+            tpPlayer2Name.setText(R.string.player_2_name);
+        } else {
             tpPlayer2Name.setText(name2);
         }
     }
-
-//    private class UnityBannerListener implements BannerView.IListener, IUnityAdsListener {
-//
-//        @Override
-//        public void onUnityAdsReady(String s) {
-//
-//        }
-//
-//        @Override
-//        public void onUnityAdsStart(String s) {
-//
-//        }
-//
-//        @Override
-//        public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-//
-//        }
-//
-//        @Override
-//        public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerLoaded(BannerView bannerView) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerClick(BannerView bannerView) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerFailedToLoad(BannerView bannerView, BannerErrorInfo bannerErrorInfo) {
-//
-//        }
-//
-//        @Override
-//        public void onBannerLeftApplication(BannerView bannerView) {
-//
-//        }
-//    }
 }

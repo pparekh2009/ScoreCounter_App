@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.priyanshparekh.scorecounter">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_logo"
@@ -10,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
-            android:name=".MenuActivity2"
+            android:name=".MenuActivity"
             android:screenOrientation="landscape"/>
         <activity
             android:name=".TossActivity"
@@ -27,9 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MenuActivity"
-            android:screenOrientation="landscape" />
         <activity
             android:name=".OnePlayerActivity"
             android:screenOrientation="landscape" />
