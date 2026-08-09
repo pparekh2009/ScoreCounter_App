@@ -1,6 +1,6 @@
 # Score Counter
 
-A simple Android app to keep score for 1 to 4 players, with built-in coin toss and dice roll utilities — handy for board games and card games.
+A simple Android app to keep score for 1 to 4 players, with built-in coin toss and dice roll utilities - handy for board games and card games.
 
 ## Screenshots
 
@@ -23,8 +23,8 @@ A simple Android app to keep score for 1 to 4 players, with built-in coin toss a
 - Track score for each player:
     - Single press to increment score by 1
     - Long press to decrement score by 1
-- **Toss** — flip a coin for heads/tails
-- **Dice** — roll a single die (1–6) for reference
+- **Toss** — Flip a coin for heads/tails
+- **Dice** — Roll a single die (1–6) for reference
 
 ## Tech Stack
 
